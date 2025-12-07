@@ -1,6 +1,6 @@
 # Personal Blog
 
-A personal technical blog built with [Hexo](https://hexo.io/), featuring articles about CTF (Capture The Flag), JVM (Java Virtual Machine), Linux, Spring Framework, Web Security, and various other technical topics.
+A personal technical blog featuring articles about CTF (Capture The Flag), JVM (Java Virtual Machine), Linux, Spring Framework, Web Security, and various other technical topics.
 
 ## 📚 Topics Covered
 
@@ -16,124 +16,81 @@ A personal technical blog built with [Hexo](https://hexo.io/), featuring article
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v12.0 or higher)
-- [npm](https://www.npmjs.com/) (comes with Node.js)
-- [Git](https://git-scm.com/)
+- [Python 3](https://www.python.org/) (comes pre-installed on most systems)
+- [Git](https://git-scm.com/) (optional, for cloning the repository)
 
 ### Installation
 
-1. **Install Hexo CLI globally:**
-   ```bash
-   npm install hexo-cli -g
-   ```
-
-2. **Clone this repository:**
+1. **Clone this repository:**
    ```bash
    git clone https://github.com/kchen9530/personal-blog.git
    cd personal-blog
    ```
 
-3. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-4. **Install Hexo Git Deployer (if you want to deploy):**
-   ```bash
-   npm install hexo-deployer-git --save
-   ```
+   Or simply download and extract the repository files.
 
 ## 🏃 Running Locally
 
-To run the blog locally for development:
+This is a static website, so you can run it locally using Python's built-in HTTP server.
+
+### Python 3
+
+Navigate to the repository directory and run:
 
 ```bash
-hexo server
+python3 -m http.server 8000
 ```
 
-Or use the short form:
+Or specify a different port:
 
 ```bash
-hexo s
+python3 -m http.server 4000
 ```
 
-The blog will be available at `http://localhost:4000` by default.
+### Python 2 (if Python 3 is not available)
 
-## 📝 Configuration
-
-The main configuration file is `_config.yml`. For deployment, configure the deploy section:
-
-```yaml
-deploy:
-  type: git
-  repo: https://github.com/kchen9530/personal-blog.git
-  branch: master
+```bash
+python -m SimpleHTTPServer 8000
 ```
 
-## 🛠️ Common Commands
+The blog will be available at:
+- **http://localhost:8000** (or the port you specified)
 
-- **Generate static files:**
-  ```bash
-  hexo generate
-  # or
-  hexo g
-  ```
+Open the URL in your web browser to view the blog.
 
-- **Start local server:**
-  ```bash
-  hexo server
-  # or
-  hexo s
-  ```
+### Stopping the Server
 
-- **Deploy to GitHub Pages:**
-  ```bash
-  hexo deploy
-  # or
-  hexo d
-  ```
-
-- **Clean cache and generated files:**
-  ```bash
-  hexo clean
-  ```
-
-- **Generate and deploy in one command:**
-  ```bash
-  hexo generate --deploy
-  # or
-  hexo g -d
-  ```
+Press `Ctrl+C` in the terminal to stop the server.
 
 ## 📦 Project Structure
 
 ```
 personal-blog/
-├── _config.yml          # Hexo configuration
-├── source/              # Source files (if using Hexo source)
-├── themes/              # Theme files (if using custom theme)
-├── public/              # Generated static files
 ├── 2020/                # Blog posts from 2020
 ├── 2021/                # Blog posts from 2021
+├── about/               # About page
 ├── archives/            # Archive pages
 ├── tags/                # Tag pages
 ├── css/                 # Stylesheets
 ├── js/                  # JavaScript files
 ├── images/              # Image assets
+├── fancybox/            # Fancybox plugin files
 └── index.html           # Main index page
 ```
 
 ## 🌐 Deployment
 
-This blog is deployed to GitHub Pages. The static HTML files are generated and pushed to the `master` branch.
+This blog is deployed to GitHub Pages. The static HTML files are hosted directly from the `master` branch.
 
-To deploy manually:
+To deploy updates, simply push changes to the repository:
 
 ```bash
-hexo clean
-hexo generate
-hexo deploy
+git add .
+git commit -m "Update blog"
+git push origin master
 ```
+
+GitHub Pages will automatically serve the updated content.
 
 ## 📄 License
 
@@ -147,6 +104,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
-- Built with [Hexo](https://hexo.io/)
 - Powered by [GitHub Pages](https://pages.github.com/)
-
